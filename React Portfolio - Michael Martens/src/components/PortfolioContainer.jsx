@@ -1,35 +1,28 @@
 import React, { useState } from 'react';
-import NavTabs from './NavTabs';
-import Home from './pages/Home';
-import About from './pages/About';
-import Blog from './pages/Blog';
-import Contact from './pages/Contact';
+import Navigation from './Navigation';
+import About from './sections/About';
+import Portfolio from './sections/Portfolio';
+import Resume from './sections/Resume';
+import Contact from './sections/Contact';
 
 export default function PortfolioContainer() {
-  const [currentPage, setCurrentPage] = useState('Home');
+  const [currentSection, setCurrentSection] = useState('About');
 
-  // TODO: Add a comment describing the functionality of this method
-  const renderPage = () => {
-    if (currentPage === 'Home') {
-      return <Home />;
-    }
-    if (currentPage === 'About') {
-      return <About />;
-    }
-    if (currentPage === 'Blog') {
-      return <Blog />;
-    }
-    return <Contact />;
+  const renderSection = () => {
+    return <section>
+      <About currentSection={currentSection} handleSectionChange={handleSectionChange} />
+      <Portfolio currentSection={currentSection} handleSectionChange={handleSectionChange} />
+      <Resume currentSection={currentSection} handleSectionChange={handleSectionChange} />
+      <Contact currentSection={currentSection} handleSectionChange={handleSectionChange} />
+    </section>
   };
 
-  const handlePageChange = (page) => setCurrentPage(page);
+  const handleSectionChange = (section) => setCurrentSection(section);
 
   return (
-    <div>
-      {/* // TODO: Add a comment describing what we are passing as props */}
-      <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
-      {/* // TODO: Add a comment explaining what is happening on the following line */}
-      {renderPage()}
-    </div>
+    <section className='portfolioContainer'>
+      <Navigation currentSection={currentSection} handleSectionChange={handleSectionChange} />
+      {renderSection()}
+    </section>
   );
 }
