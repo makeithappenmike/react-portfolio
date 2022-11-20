@@ -12,7 +12,7 @@ line-height: 24px;
 font-weight: 400;
 
 color-scheme: light dark;
-color: #9B2226;
+/* color: #9B2226; */
 background-color: #001219;
 
 font-synthesis: none;
@@ -46,6 +46,11 @@ min-height: 100vh;
     padding: 10px;
     margin-bottom: 10px;
 }
+
+/* .card {
+    background-color: #9B2226;
+    color: white;
+} */
 
 h1 {
 font-size: 3.2em;

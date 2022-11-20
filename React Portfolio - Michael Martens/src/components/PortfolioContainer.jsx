@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navigation from './Navigation';
+import Header from './Header';
 import About from './sections/About';
 import Portfolio from './sections/Portfolio';
 import Resume from './sections/Resume';
@@ -21,7 +21,7 @@ export default function PortfolioContainer() {
 
   return (
     <section className='portfolioContainer'>
-      <Navigation currentSection={currentSection} handleSectionChange={handleSectionChange} />
+      <Header currentSection={currentSection} handleSectionChange={handleSectionChange} />
       {renderSection()}
     </section>
   );

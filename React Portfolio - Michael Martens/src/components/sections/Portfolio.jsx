@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
+import Project from '../Project';
 
 function Portfolio(props) {
   return (
-    <section className='pageSection portfolio'>
-    <h2>Portfolio</h2>
-    <section></section>
-    </section>
+    <Project />
   )
 }
 
