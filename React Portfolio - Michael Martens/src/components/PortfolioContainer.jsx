@@ -17,11 +17,11 @@ export default function PortfolioContainer() {
 
   const renderSection = () => {
     return <section>
-      <About activeClass="active" to="About" spy={true} smooth={true} currentSection={currentSection} handleSectionChange={handleSectionChange} />
-      <Portfolio currentSection={currentSection} handleSectionChange={handleSectionChange} />
-      <Resume currentSection={currentSection} handleSectionChange={handleSectionChange} />
+      <About activeClass="active" to="About" spy={true} smooth={true} />
+      <Portfolio to="portfolio" spy={true} smooth={true} />
+      <Resume to="resume" spy={true} smooth={true} />
       <section ref={contact}>
-      <Contact to="contact" spy={true} smooth={true} currentSection={currentSection} handleSectionChange={handleSectionChange} />
+      <Contact to="contact" spy={true} smooth={true} />
       </section>
     </section>
   };
