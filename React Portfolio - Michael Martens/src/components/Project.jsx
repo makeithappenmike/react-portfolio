@@ -1,13 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
+import placeholder from '../assets/placeholder.png';
 
 function BasicExample() {
   return (
     <>
       <section id='portfolio'>
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Img variant="top" src={placeholder} />
         <Card.Body bg='secondary'>
           <Card.Title bg='primary' as='h4'>Card Title</Card.Title>
           <Card.Text>
@@ -18,7 +19,7 @@ function BasicExample() {
         </Card.Body>
       </Card>
       <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Img variant="top" src={placeholder} />
       <Card.Body bg='secondary'>
         <Card.Title bg='primary' as='h4'>Card Title</Card.Title>
         <Card.Text>
@@ -29,7 +30,7 @@ function BasicExample() {
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src="holder.js/100px180" />
+    <Card.Img variant="top" src={placeholder} />
     <Card.Body bg='secondary'>
       <Card.Title bg='primary' as='h4'>Card Title</Card.Title>
       <Card.Text>
