@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation';
 
-function Header({ currentPage, handlePageChange }) {
+function Header() {
   return (
     <Navigation />
   );
