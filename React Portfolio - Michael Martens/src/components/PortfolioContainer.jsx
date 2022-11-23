@@ -16,12 +16,12 @@ export default function PortfolioContainer() {
   };
 
   const renderSection = () => {
-    return <section class='page'>
-      <About activeClass="active" to="About" spy={true} smooth={true} />
-      <Portfolio to="portfolio" spy={true} smooth={true} />
-      <Resume to="resume" spy={true} smooth={true} />
+    return <section className='page'>
+      <About to="About" spy='true' smooth='true' />
+      <Portfolio to="portfolio" spy='true' smooth='true' />
+      <Resume to="resume" spy='true' smooth='true' />
       <section ref={contact}>
-      <Contact to="contact" spy={true} smooth={true} />
+      <Contact to="contact" spy='true' smooth='true' />
       </section>
     </section>
   };

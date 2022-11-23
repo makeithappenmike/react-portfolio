@@ -18,7 +18,7 @@ const styles = {
 function BasicExample() {
   return (
     <>
-      <section class='portfolio' id='portfolio'>
+      <section className='portfolio' id='portfolio'>
 
       {/* Project One */}
       <Row xs={1} md={2} className="g-4 justify-content-center">
