@@ -1,12 +1,5 @@
 import React from 'react'
 
-const styles = {
-  about: {
-    borderLeft: '10px solid blue',
-    backgroundColor: 'gray'
-  }
-};
-
 function About() {
   return (
     <section className='pageSection about' >
