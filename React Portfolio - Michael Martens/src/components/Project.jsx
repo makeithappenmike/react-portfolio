@@ -25,12 +25,12 @@ function BasicExample() {
       <Card style={styles.project} className="project">
         <Card.Img variant="top" src={placeholder} style={styles.image} />
         <Card.Body bg='secondary'>
-          <Card.Title bg='primary' as='h4'>Project One</Card.Title>
+          <Card.Title bg='primary' as='h4'>Have a Marvelous Time</Card.Title>
           <Card.Text>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">Visit Site</Button>
         </Card.Body>
       </Card>
 
@@ -38,12 +38,12 @@ function BasicExample() {
       <Card style={styles.project} className="project">
       <Card.Img variant="top" src={placeholder} style={styles.image} />
       <Card.Body bg='secondary'>
-        <Card.Title bg='primary' as='h4'>Project Two</Card.Title>
+        <Card.Title bg='primary' as='h4'>NOVELty</Card.Title>
         <Card.Text>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Visit Site</Button>
       </Card.Body>
     </Card>
 
@@ -51,12 +51,12 @@ function BasicExample() {
     <Card style={styles.project} className="project">
     <Card.Img variant="top" src={placeholder} style={styles.image} />
     <Card.Body bg='secondary'>
-      <Card.Title bg='primary' as='h4'>Project Three</Card.Title>
+      <Card.Title bg='primary' as='h4'>Pass Word Generator</Card.Title>
       <Card.Text>
         Some quick example text to build on the card title and make up the
         bulk of the card's content.
       </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
+      <Button variant="primary">Visit Site</Button>
     </Card.Body>
   </Card>
 
@@ -64,12 +64,12 @@ function BasicExample() {
   <Card style={styles.project} className="project">
     <Card.Img variant="top" src={placeholder} style={styles.image} />
     <Card.Body bg='secondary'>
-      <Card.Title bg='primary' as='h4'>Project Four</Card.Title>
+      <Card.Title bg='primary' as='h4'>PWA Text Editor</Card.Title>
       <Card.Text>
         Some quick example text to build on the card title and make up the
         bulk of the card's content.
       </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
+      <Button variant="primary">Visit Site</Button>
     </Card.Body>
   </Card>
   </Row>

@@ -8,31 +8,31 @@ import mm_logo_white from '../assets/mm_logo_white.png';
 function Navigation({ currentPage, handlePageChange }) {
 
   const [currentSection, setCurrentSection] = useState('About');
-  const ref = useRef(null);
+  // const ref = useRef(null);
   // const about = useRef(null);
   // const portfolio = useRef(null);
   // const resume = useRef(null);
   // const contact = useRef(null);
 
-  () => {useEffect(() => {
-    const sectionClicked = ref.current.id;
-    window.addEventListener('click', console.log("Clicked:", sectionClicked))
+  // () => {useEffect(() => {
+  //   const sectionClicked = ref.current.id;
+  //   window.addEventListener('click', console.log("Clicked:", sectionClicked))
     
-  }, []);}
+  // }, []);}
 
-  const handleClick = (elementRef) => {
-    console.log(elementRef.target.id, 'Clicked');
-    // console.log("e.current", elementRef);
-    // () => {useEffect(() => {
-    //   const sectionClicked = ref.current.id;
-    //   console.log("Clicked:", sectionClicked);
-    // }, []);}
-    window.scrollTo({
-      top: elementRef,
-      behavior: 'smooth'
-    });
-    // ref.current?.scrollIntoView({behavior: 'smooth'});
-  };
+  // const handleClick = (elementRef) => {
+  //   console.log(elementRef.target.id, 'Clicked');
+  //   // console.log("e.current", elementRef);
+  //   // () => {useEffect(() => {
+  //   //   const sectionClicked = ref.current.id;
+  //   //   console.log("Clicked:", sectionClicked);
+  //   // }, []);}
+  //   window.scrollTo({
+  //     top: elementRef,
+  //     behavior: 'smooth'
+  //   });
+  //   // ref.current?.scrollIntoView({behavior: 'smooth'});
+  // };
 
   const styles = {
     logo: {
@@ -44,26 +44,26 @@ function Navigation({ currentPage, handlePageChange }) {
     <>
     <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
       <Container>
-        <Navbar.Brand href='#home'><img style={styles.logo} className='mm_logo' src={mm_logo_white} /></Navbar.Brand>
+        <Navbar.Brand href='#home'><img to="home" spy smooth href='#home' style={styles.logo} className='mm_logo' src={mm_logo_white} /></Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='me-auto'>
-            <Nav.Link delay={1000} to="about" spy='true'smooth='true' href='#about' id='About'>About</Nav.Link>
+            <Nav.Link delay={1000} to="about" spy smooth href='#about' id='About'>About</Nav.Link>
             <NavDropdown title='Portfolio' id='collasible-nav-dropdown'>
-              <NavDropdown.Item href='#project/one' onClick={handleClick} id='Project_One'>
+              <NavDropdown.Item href='#project/one' id='Project_One'>
                 Project One
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href='#project/two' onClick={handleClick} id='Project_Two'>
+              <NavDropdown.Item href='#project/two' id='Project_Two'>
                 Project Two
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href='#project/three' onClick={handleClick} id='Project_Three'>
+              <NavDropdown.Item href='#project/three' id='Project_Three'>
                 Project Three
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link delay={1000} to="resume" spy='true'smooth='true' href='#resume' id='Resume'>Resume</Nav.Link >
-            <Nav.Link delay={1000} to="contact" spy='true'smooth='true' href='#contact' id='Contact'>Contact</Nav.Link >
+            <Nav.Link delay={1000} to="resume" spy smooth href='#resume' id='Resume'>Resume</Nav.Link >
+            <Nav.Link delay={1000} to="contact" spy smooth href='#contact' id='Contact'>Contact</Nav.Link >
           </Nav>
         </Navbar.Collapse>
       </Container>
