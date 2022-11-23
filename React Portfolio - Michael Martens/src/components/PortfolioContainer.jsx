@@ -16,7 +16,7 @@ export default function PortfolioContainer() {
   };
 
   const renderSection = () => {
-    return <section>
+    return <section class='page'>
       <About activeClass="active" to="About" spy={true} smooth={true} />
       <Portfolio to="portfolio" spy={true} smooth={true} />
       <Resume to="resume" spy={true} smooth={true} />
