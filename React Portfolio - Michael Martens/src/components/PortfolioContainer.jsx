@@ -5,6 +5,19 @@ import Portfolio from './sections/Portfolio';
 import Resume from './sections/Resume';
 import Contact from './sections/Contact';
 
+const styles = {
+  about: {
+    borderLeft: '10px solid blue',
+    backgroundColor: 'gray'
+  },
+  portfolio: {
+  },
+  resume: {
+  },
+  contact: {
+  }
+};
+
 export default function PortfolioContainer() {
   
   const [currentSection, setCurrentSection] = useState('About');
@@ -17,11 +30,17 @@ export default function PortfolioContainer() {
 
   const renderSection = () => {
     return <section className='page'>
-      <About to="About" spy='true' smooth='true' />
-      <Portfolio to="portfolio" spy='true' smooth='true' />
-      <Resume to="resume" spy='true' smooth='true' />
-      <section ref={contact}>
-      <Contact to="contact" spy='true' smooth='true' />
+      <section id='about' style={styles.about}>
+      <About />
+      </section>
+      <section id='portfolio' style={styles.portfolio}>
+      <Portfolio />
+      </section>
+      <section id='resume' style={styles.resume}>
+      <Resume />
+      </section>
+      <section id='contact' style={styles.contact}>
+      <Contact />
       </section>
     </section>
   };

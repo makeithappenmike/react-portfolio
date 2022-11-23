@@ -1,7 +1,7 @@
 function Contact(props) {
 
   return (
-    <section id='contact' className='pageSection contact'>
+    <section className='pageSection contact'>
     <h2>Contact</h2>
     <p>I've been working with various forms of Developement for more than fifteen years. I love making processes more efficient, more informative, and more impactful. Whether that means designing Websites to help funnel activity into a business for the first time or taking existing Internal Tooling and building upon it. I'm proficient in front end design (HTML, CSS, current web-protocols, accessibility, etc..), Javascript/Node.js, MySQL, and working with APIs.
     <p />
