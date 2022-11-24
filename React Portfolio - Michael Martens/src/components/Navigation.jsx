@@ -34,17 +34,18 @@ function Navigation({ currentPage, handlePageChange }) {
   //   // ref.current?.scrollIntoView({behavior: 'smooth'});
   // };
 
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState('styles.active');
 
-  const handleClick = () => {
+  // const handleClick = () => {
 
-    console.log('Click!');
-    // 👇️ toggle
-    setIsActive(current => !current);
-
-    // 👇️ or set to true
-    // setIsActive(true);
-  };
+  //   console.log('Click!');
+  //   if (!isActive) {
+  //     setIsActive(isActive);
+  //   } else {
+  //     setIsActive(!isActive)
+  //   }
+  //   // setIsActive(true);
+  // };
 
   const styles = {
     logo: {
@@ -56,7 +57,7 @@ function Navigation({ currentPage, handlePageChange }) {
     active: {
       borderLeft: '10px solid #9B2226',
       borderRadius: '5px',
-      backgroundColor: isActive ? 'salmon' : '',
+      backgroundColor: isActive ? 'red' : 'blue',
       marginBottom: '50px',
       padding: '10px',
       color: 'white'
@@ -71,22 +72,22 @@ function Navigation({ currentPage, handlePageChange }) {
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='me-auto'>
-            <Nav.Link delay={1000} to="about" spy smooth href='#about' id='About' onClick={handleClick}>About</Nav.Link>
-            <NavDropdown title='Portfolio' id='collasible-nav-dropdown' onClick={handleClick}>
-              <NavDropdown.Item href='#project/one' id='Project_One' onClick={handleClick}>
+            <Nav.Link delay={1000} to="about" spy smooth href='#about' id='About'>About</Nav.Link>
+            <NavDropdown title='Portfolio' id='collasible-nav-dropdown'>
+              <NavDropdown.Item href='#project/one' id='Project_One'>
                 Project One
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href='#project/two' id='Project_Two' onClick={handleClick}>
+              <NavDropdown.Item href='#project/two' id='Project_Two'>
                 Project Two
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href='#project/three' id='Project_Three' onClick={handleClick}>
+              <NavDropdown.Item href='#project/three' id='Project_Three'>
                 Project Three
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link delay={1000} to="resume" spy smooth href='#resume' id='Resume' onClick={handleClick}>Resume</Nav.Link >
-            <Nav.Link delay={1000} to="contact" spy smooth href='#contact' id='Contact' onClick={handleClick}>Contact</Nav.Link >
+            <Nav.Link delay={1000} to="resume" spy smooth href='#resume' id='Resume'>Resume</Nav.Link >
+            <Nav.Link delay={1000} to="contact" spy smooth href='#contact' id='Contact'>Contact</Nav.Link >
           </Nav>
         </Navbar.Collapse>
       </Container>

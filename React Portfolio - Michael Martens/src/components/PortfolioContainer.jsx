@@ -1,82 +1,79 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Header from './Header';
 import About from './sections/About';
 import Portfolio from './sections/Portfolio';
 import Resume from './sections/Resume';
 import Contact from './sections/Contact';
 import Hero from './sections/Hero';
-
-// const styles = {
-//   sections: {
-//     padding: '50px',
-//     color: 'white',
-//     backgroundColor: 'black'
-//   },
-//   hero: {
-//   },
-//   about: {
-//     padding: '10px',
-//     // borderLeft: '10px solid #9B2226',
-//     // borderRadius: '5px',
-//     // backgroundColor: '#212529',
-//     // marginBottom: '50px',
-//     // padding: '10px',
-//     // color: 'white'
-//   },
-//   portfolio: {
-//     padding: '10px',
-//   },
-//   resume: {
-//     padding: '10px',
-//   },
-//   contact: {
-//     padding: '10px',
-//   },
-//   active: {
-//     borderLeft: '10px solid #9B2226',
-//     borderRadius: '5px',
-//     // backgroundColor: isActive ? 'salmon' : '',
-//     marginBottom: '50px',
-//     padding: '10px',
-//     color: 'white'
-//   },
-// };
+import Navigation from './Navigation';
 
 export default function PortfolioContainer() {
   
-  const [isActive, setIsActive] = useState(false);
-
-  const handleClick = () => {
-    // 👇️ toggle
-    setIsActive(current => !current);
-
-    // 👇️ or set to true
-    // setIsActive(true);
-  };
-
-  // const ref = useRef(null);
-  // const contact = useRef(null);
-  // const handleSectionChange = (e) => {
-  //   console.log(e.target.id, 'Clicked');
-  //   ref.current?.scrollIntoView({behavior: 'smooth'});
+  // const handleClick = event => {
+  //   window.addEventListener('click', console.log('Clicking'));
+  //   console.log('Target: ', event.currentTarget.id);
+  //   setIsActive(() => {
+  //     console.log('Hello');
+  //     console.log(document.querySelector('#' + event.currentTarget.id).style={styles.active});
+      
+  //   });
+  //   // event.currentTarget.id.style={styles.active};
   // };
 
+// The scroll listener
+console.log(document.querySelector('#resume'));
+const handleScroll = () => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 250 && window.scrollY < 350) {
+        document.querySelector('#about').style.backgroundColor = 'green';
+      } else if (window.scrollY > 350 && window.scrollY < 450) {
+        document.querySelector('#portfolio').style.backgroundColor = 'red';
+        document.querySelector('#about').style.backgroundColor = '';
+      } else if (window.scrollY > 450 && window.scrollY < 550) {
+        document.querySelector('#resume').style.backgroundColor = 'red';
+        document.querySelector('#portfolio').style.backgroundColor = '';
+      }
+    });
+  };
+
+// Attach the scroll listener to the div
+useEffect(() => {
+  // const div = ref.current
+  window.addEventListener("scroll", handleScroll)
+}, [handleScroll])
+
+  const [isActive, setIsActive] = useState(false);
+
   const renderSection = () => {
+
+    const handleClick = event => {
+      window.addEventListener('click', console.log('Clicking'));
+      console.log('Target: ', event.currentTarget.id);
+      setIsActive(() => {
+        console.log('Hello');
+        console.log(document.querySelector('#' + event.currentTarget.id));
+        document.querySelector('#' + event.currentTarget.id).style.backgroundColor = 'green';
+
+        
+      });
+      // event.currentTarget.id.style={styles.active};
+    };
+
     return <section className='page'>
-      <section id='hero' style={styles.hero}>
+      <section id='hero' style={styles.hero}  onClick={handleClick} onScroll={handleScroll} >
         <Hero />
       </section>
-      <section className='sections' style={styles.sections}>
-        <section id='about' style={styles.about}>
+      <section className='sections'>
+        <section id='about' style={styles.active} onClick={handleClick} onScroll={handleScroll} >
           <About />
         </section>
-        <section id='portfolio' style={styles.portfolio}>
+        <section id='portfolio' style={styles.portfolio} onClick={handleClick} onScroll={handleScroll}>
           <Portfolio />
         </section>
-        <section id='resume' style={styles.resume}>
+        <section id='resume' style={styles.resume} onClick={handleClick} onScroll={handleScroll}>
           <Resume />
         </section>
-        <section id='contact' style={styles.contact}>
+        <section id='contact' style={styles.contact} onClick={handleClick} onScroll={handleScroll}>
           <Contact />
         </section>
       </section>
@@ -93,12 +90,6 @@ export default function PortfolioContainer() {
     },
     about: {
       padding: '10px',
-      // borderLeft: '10px solid #9B2226',
-      // borderRadius: '5px',
-      // backgroundColor: '#212529',
-      // marginBottom: '50px',
-      // padding: '10px',
-      // color: 'white'
     },
     portfolio: {
       padding: '10px',
@@ -112,7 +103,7 @@ export default function PortfolioContainer() {
     active: {
       borderLeft: '10px solid #9B2226',
       borderRadius: '5px',
-      backgroundColor: isActive ? 'salmon' : '',
+      backgroundColor: isActive ? 'red' : 'blue',
       marginBottom: '50px',
       padding: '10px',
       color: 'white'
