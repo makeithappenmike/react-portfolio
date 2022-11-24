@@ -6,6 +6,7 @@ import Resume from './sections/Resume';
 import Contact from './sections/Contact';
 import Hero from './sections/Hero';
 import Navigation from './Navigation';
+import { ParallaxProvider, Parallax, useParallax } from 'react-scroll-parallax';
 
 export default function PortfolioContainer() {
   
@@ -21,9 +22,9 @@ export default function PortfolioContainer() {
   // };
 
 // The scroll listener
-console.log(document.querySelector('#resume'));
 const handleScroll = () => {
     window.addEventListener("scroll", () => {
+      // console.log('Two', window.scrollY);
       if (window.scrollY > 250 && window.scrollY < 350) {
         document.querySelector('#about').style.backgroundColor = 'green';
       } else if (window.scrollY > 350 && window.scrollY < 450) {
@@ -43,6 +44,7 @@ useEffect(() => {
 }, [handleScroll])
 
   const [isActive, setIsActive] = useState(false);
+  // const { ref } = useParallax({ speed: 10, onEnter: (element) => console.log('Enter', element.el), onExit: (element) => console.log('Exit', element.el),  });
 
   const renderSection = () => {
 
@@ -59,25 +61,35 @@ useEffect(() => {
       // event.currentTarget.id.style={styles.active};
     };
 
-    return <section className='page'>
+    return <ParallaxProvider>
+      <section className='page'>
       <section id='hero' style={styles.hero}  onClick={handleClick} onScroll={handleScroll} >
         <Hero />
       </section>
       <section className='sections'>
-        <section id='about' style={styles.active} onClick={handleClick} onScroll={handleScroll} >
+        <section id='about' style={styles.about} onClick={handleClick} onScroll={handleScroll}>
+        <Parallax>
           <About />
+          </Parallax>
         </section>
         <section id='portfolio' style={styles.portfolio} onClick={handleClick} onScroll={handleScroll}>
+        <Parallax>
           <Portfolio />
+          </Parallax>
         </section>
         <section id='resume' style={styles.resume} onClick={handleClick} onScroll={handleScroll}>
+        <Parallax>
           <Resume />
+          </Parallax>
         </section>
         <section id='contact' style={styles.contact} onClick={handleClick} onScroll={handleScroll}>
+        <Parallax>
           <Contact />
+          </Parallax>
         </section>
       </section>
     </section>
+    </ParallaxProvider>
   };
 
   const styles = {
