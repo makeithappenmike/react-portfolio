@@ -23,17 +23,20 @@ export default function PortfolioContainer() {
 
 // The scroll listener
 const handleScroll = () => {
+  const sectionHeight = document.querySelector('#about').offsetHeight;
     window.addEventListener("scroll", () => {
-      // console.log('Two', window.scrollY);
-      if (window.scrollY > 250 && window.scrollY < 350) {
-        document.querySelector('#about').style.backgroundColor = 'green';
-      } else if (window.scrollY > 350 && window.scrollY < 450) {
-        document.querySelector('#portfolio').style.backgroundColor = 'red';
-        document.querySelector('#about').style.backgroundColor = '';
-      } else if (window.scrollY > 450 && window.scrollY < 550) {
-        document.querySelector('#resume').style.backgroundColor = 'red';
-        document.querySelector('#portfolio').style.backgroundColor = '';
-      }
+      // console.log('Scroll Y:', window.scrollY);
+      // console.log('Section Height:', sectionHeight);
+      // if (window.scrollY < sectionHeight / 2 && window.scrollY > sectionHeight * 1.5) {
+      //   document.querySelector('#about').style.backgroundColor = 'pink';
+      // } else if (window.scrollY > sectionHeight * 1.5 && window.scrollY < sectionHeight * 2.5) {
+      //   document.querySelector('#portfolio').style.backgroundColor = 'pink';
+      //   document.querySelector('#about').style.backgroundColor = 'black';
+      //   document.querySelector('#about').style.backgroundColor = '';
+      // } else if (window.scrollY > 450 && window.scrollY < 550) {
+      //   document.querySelector('#resume').style.backgroundColor = 'red';
+      //   document.querySelector('#portfolio').style.backgroundColor = '';
+      // }
     });
   };
 
@@ -63,7 +66,7 @@ useEffect(() => {
 
     return <ParallaxProvider>
       <section className='page'>
-      <section id='hero' style={styles.hero}  onClick={handleClick} onScroll={handleScroll} >
+      <section id='hero' style={styles.hero}  onClick={handleClick} onScroll={handleScroll}>
         <Hero />
       </section>
       <section className='sections'>
@@ -96,24 +99,41 @@ useEffect(() => {
     sections: {
       padding: '50px',
       color: 'white',
-      backgroundColor: 'black'
+      backgroundColor: 'black',
     },
     hero: {
     },
     about: {
-      padding: '10px',
+      padding: '50px',
+      minHeight: '100vh',
+      borderLeft: '15px solid #9d0208',
+      borderRadius: '5px',
+      backgroundColor: 'black',
+      color: 'white',
     },
     portfolio: {
       padding: '10px',
+      paddingTop: '50px',
+      minHeight: '100vh',
+      borderLeft: '15px solid #dc2f02',
+      backgroundColor: 'black',
+      color: 'white',
     },
     resume: {
-      padding: '10px',
+      padding: '50px',
+      minHeight: '100vh',
+      borderLeft: '15px solid #f48c06',
+      backgroundColor: 'black',
+      color: 'white',
     },
     contact: {
-      padding: '10px',
+      padding: '50px',
+      minHeight: '100vh',
+      borderLeft: '15px solid #faa307',      backgroundColor: 'black',
+      color: 'white',
     },
     active: {
-      borderLeft: '10px solid #9B2226',
+      borderLeft: '10px solid #ffba08',
       borderRadius: '5px',
       backgroundColor: isActive ? 'red' : 'blue',
       marginBottom: '50px',

@@ -7,7 +7,8 @@ import placeholder from '../assets/placeholder.png';
 const styles = {
   project: {
     width: '18rem',
-    margin: '10px'
+    margin: '10px',
+    backgroundColor: '#9d0208'
   },
   image: {
     width: '100%',
@@ -61,6 +62,32 @@ function BasicExample() {
   </Card>
 
   {/* Project Four */}
+  <Card style={styles.project} className="project">
+    <Card.Img variant="top" src={placeholder} style={styles.image} />
+    <Card.Body bg='secondary'>
+      <Card.Title bg='primary' as='h4'>PWA Text Editor</Card.Title>
+      <Card.Text>
+        Some quick example text to build on the card title and make up the
+        bulk of the card's content.
+      </Card.Text>
+      <Button variant="primary">Visit Site</Button>
+    </Card.Body>
+  </Card>
+
+  {/* Project Five */}
+  <Card style={styles.project} className="project">
+    <Card.Img variant="top" src={placeholder} style={styles.image} />
+    <Card.Body bg='secondary'>
+      <Card.Title bg='primary' as='h4'>PWA Text Editor</Card.Title>
+      <Card.Text>
+        Some quick example text to build on the card title and make up the
+        bulk of the card's content.
+      </Card.Text>
+      <Button variant="primary">Visit Site</Button>
+    </Card.Body>
+  </Card>
+
+  {/* Project Six */}
   <Card style={styles.project} className="project">
     <Card.Img variant="top" src={placeholder} style={styles.image} />
     <Card.Body bg='secondary'>
