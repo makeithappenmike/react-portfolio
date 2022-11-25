@@ -4,6 +4,7 @@ import About from './sections/About';
 import Portfolio from './sections/Portfolio';
 import Resume from './sections/Resume';
 import Contact from './sections/Contact';
+import Form from "../components/Form/index";
 import Hero from './sections/Hero';
 import Navigation from './Navigation';
 import { ParallaxProvider, Parallax, useParallax } from 'react-scroll-parallax';
@@ -54,13 +55,11 @@ useEffect(() => {
     const handleClick = event => {
       window.addEventListener('click', console.log('Clicking'));
       console.log('Target: ', event.currentTarget.id);
-      setIsActive(() => {
-        console.log('Hello');
-        console.log(document.querySelector('#' + event.currentTarget.id));
-        document.querySelector('#' + event.currentTarget.id).style.backgroundColor = 'green';
-
-        
-      });
+      // setIsActive(() => {
+      //   console.log('Hello');
+      //   console.log(document.querySelector('#' + event.currentTarget.id));
+      //   document.querySelector('#' + event.currentTarget.id).style.backgroundColor = 'green';
+      // });
       // event.currentTarget.id.style={styles.active};
     };
 
@@ -87,7 +86,7 @@ useEffect(() => {
         </section>
         <section id='contact' style={styles.contact} onClick={handleClick} onScroll={handleScroll}>
         <Parallax>
-          <Contact />
+          <Form />
           </Parallax>
         </section>
       </section>
