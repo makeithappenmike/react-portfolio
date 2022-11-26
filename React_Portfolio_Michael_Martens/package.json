@@ -1,5 +1,5 @@
 {
-  "name": "react-portfolio---michael-martens",
+  "name": "react-portfolio-michael-martens",
   "private": true,
   "version": "0.0.0",
   "homepage": "https://makeithappenmike.github.io/react-portfolio",
@@ -15,6 +15,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.8",
     "react-scroll-parallax": "^3.3.2"
   },
