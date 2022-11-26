@@ -3,6 +3,7 @@ import Header from './Header';
 import About from './sections/About';
 import Portfolio from './sections/Portfolio';
 import Resume from './sections/Resume';
+import Footer from './sections/Footer';
 import Contact from './sections/Contact';
 import Form from "../components/Form/index";
 import Hero from './sections/Hero';
@@ -87,6 +88,11 @@ useEffect(() => {
         <section id='contact' style={styles.contact} onClick={handleClick} onScroll={handleScroll}>
         <Parallax>
           <Form />
+          </Parallax>
+        </section>
+        <section id='footer' style={styles.footer} onClick={handleClick} onScroll={handleScroll}>
+        <Parallax>
+          <Footer />
           </Parallax>
         </section>
       </section>

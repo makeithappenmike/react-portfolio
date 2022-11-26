@@ -20,13 +20,29 @@ function Form() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  // const handleInputChange = (e) => {
-  //   // Getting the value and name of the input which triggered the change
-  //   const { name, value } = e.target;
+  const handleInputChange = (e) => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = e.target;
 
-  //   // Ternary statement that will call either setFirstName or setLastName based on what field the user is typing in
-  //   return name === 'firstName' ? setFirstName(value) : setLastName(value);
-  // };
+    // Ternary statement that will call either setFirstName or setLastName based on what field the user is typing in
+    return name === 'firstName' ? setFirstName(value) : setLastName(value);
+  };
+
+  const handleEmailInputChange = (e) => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = e.target;
+
+    // Ternary statement that will call either setFirstName or setLastName based on what field the user is typing in
+    return name === 'email' ? setEmail(value) : console.log('No email found');
+  };
+
+  const handleMessageInputChange = (e) => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = e.target;
+
+    // Ternary statement that will call either setFirstName or setLastName based on what field the user is typing in
+    return name === 'message' ? setMessage(value) : console.log('No message found');
+  };
 
   const handleFormSubmit = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
@@ -61,14 +77,14 @@ function Form() {
         <input
           value={email}
           name="email"
-          onChange={handleInputChange}
+          onChange={handleEmailInputChange}
           type="text"
           placeholder="Email Address"
         />
         <input
           value={message}
           name="message"
-          onChange={handleInputChange}
+          onChange={handleMessageInputChange}
           type="text"
           placeholder="Message" id='messageInput'
         />
