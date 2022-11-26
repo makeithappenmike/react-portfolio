@@ -1,12 +1,31 @@
-import React from 'react'
+import React from 'react';
+import resume from '../../assets/resume.pdf'
+
+const downloadResume = () => {
+  // using Java Script method to get PDF file
+  fetch(resume).then(response => {
+      response.blob().then(blob => {
+          // Creating new object of PDF file
+          const fileURL = window.URL.createObjectURL(blob);
+          // Setting various property values
+          let alink = document.createElement('a');
+          alink.href = fileURL;
+          alink.download = 'Resume - Michael Martens.pdf';
+          alink.click();
+      })
+  })
+}
 
 function Resume(props) {
   return (
     <section id='resume' className='pageSection resume'>
     <h2>Resume</h2>
-    <p>I've been working with various forms of Developement for more than fifteen years. I love making processes more efficient, more informative, and more impactful. Whether that means designing Websites to help funnel activity into a business for the first time or taking existing Internal Tooling and building upon it. I'm proficient in front end design (HTML, CSS, current web-protocols, accessibility, etc..), Javascript/Node.js, MySQL, and working with APIs.
+    <p><button onClick={downloadResume} >Download</button>
     <p />
-    I currently work at Mailchimp as a Technical Support Engineer -- where I split my time between acting as a subject matter expert for front-line Product Support Reps and developing/maintaing/scaling internal components such as Slackbots, tooling for custom DNS lookups and incident response, and JIRA integrations.</p>
+    <h2>Proficiencies</h2>
+    <p>Frontend:<br />HTML, CSS, Javascript, JQuery, Responsive & Semantic Design, React, Bootstrap</p>
+    <p>Backend:<br />APIs (REST & GraphQL), Node, Express, MySQL, MongoDB/Mongoose, MERN</p>
+</p>
     </section>
   )
 }

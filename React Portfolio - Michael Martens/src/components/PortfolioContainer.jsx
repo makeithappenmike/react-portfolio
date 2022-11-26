@@ -3,7 +3,7 @@ import Header from './Header';
 import About from './sections/About';
 import Portfolio from './sections/Portfolio';
 import Resume from './sections/Resume';
-import Footer from './sections/Footer';
+import Footer from '../components/Footer';
 import Contact from './sections/Contact';
 import Form from "../components/Form/index";
 import Hero from './sections/Hero';
@@ -91,9 +91,7 @@ useEffect(() => {
           </Parallax>
         </section>
         <section id='footer' style={styles.footer} onClick={handleClick} onScroll={handleScroll}>
-        <Parallax>
           <Footer />
-          </Parallax>
         </section>
       </section>
     </section>
@@ -110,7 +108,7 @@ useEffect(() => {
     },
     about: {
       padding: '50px',
-      minHeight: '100vh',
+      // minHeight: '100vh',
       borderLeft: '15px solid #9d0208',
       borderRadius: '5px',
       backgroundColor: 'black',
@@ -119,23 +117,30 @@ useEffect(() => {
     portfolio: {
       padding: '10px',
       paddingTop: '50px',
-      minHeight: '100vh',
+      // minHeight: '100vh',
       borderLeft: '15px solid #dc2f02',
       backgroundColor: 'black',
       color: 'white',
     },
     resume: {
       padding: '50px',
-      minHeight: '100vh',
+      // minHeight: '100vh',
       borderLeft: '15px solid #f48c06',
       backgroundColor: 'black',
       color: 'white',
     },
     contact: {
       padding: '50px',
-      minHeight: '100vh',
+      // minHeight: '100vh',
       borderLeft: '15px solid #faa307',      backgroundColor: 'black',
       color: 'white',
+    },
+    footer: {
+      padding: '50px',
+      minHeight: '50px',
+      borderLeft: '15px solid #ffba08',      backgroundColor: 'black',
+      color: 'white',
+      textAlign: 'center'
     },
     active: {
       borderLeft: '10px solid #ffba08',
