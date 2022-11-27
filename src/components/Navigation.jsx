@@ -73,19 +73,7 @@ function Navigation({ currentPage, handlePageChange }) {
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='me-auto'>
             <Nav.Link delay={1000} to="about" spy smooth href='#about' id='About'>About</Nav.Link>
-            <NavDropdown title='Portfolio' id='collasible-nav-dropdown'>
-              <NavDropdown.Item href='#project/one' id='Project_One'>
-                Project One
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href='#project/two' id='Project_Two'>
-                Project Two
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href='#project/three' id='Project_Three'>
-                Project Three
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link delay={1000} to="portfolio" spy smooth href='#portfolio' id='Portfolio'>Portfolio</Nav.Link >
             <Nav.Link delay={1000} to="resume" spy smooth href='#resume' id='Resume'>Resume</Nav.Link >
             <Nav.Link delay={1000} to="contact" spy smooth href='#contact' id='Contact'>Contact</Nav.Link >
           </Nav>
