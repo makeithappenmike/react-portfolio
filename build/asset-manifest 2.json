@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-portfolio/static/css/main.466ab466.css",
-    "main.js": "/react-portfolio/static/js/main.c64795a2.js",
+    "main.js": "/react-portfolio/static/js/main.593199d6.js",
     "static/media/have-a-marvelous-time.png": "/react-portfolio/static/media/have-a-marvelous-time.1d633e23e95e16848938.png",
     "static/media/hero_bg.png": "/react-portfolio/static/media/hero_bg.d0ab2ff39a05ceb57174.png",
     "static/media/weather_app.png": "/react-portfolio/static/media/weather_app.6eddbd91fd29ec96ca1f.png",
@@ -11,15 +11,14 @@
     "static/media/pwa_text_editor.png": "/react-portfolio/static/media/pwa_text_editor.46f99cd401118e862ffb.png",
     "static/media/resume.pdf": "/react-portfolio/static/media/resume.ae1afc74cfd3ad7c9f13.pdf",
     "static/media/github_white.png": "/react-portfolio/static/media/github_white.cc556276ccca199a92da.png",
-    "static/media/favicon.ico": "/react-portfolio/static/media/favicon.f30ff537622fe8612d0a.ico",
     "static/media/mm_logo_white.png": "/react-portfolio/static/media/mm_logo_white.c7ff550084d188d60870.png",
     "static/media/linkedin_white.png": "/react-portfolio/static/media/linkedin_white.7c056620bdab3bbd0031.png",
     "index.html": "/react-portfolio/index.html",
     "main.466ab466.css.map": "/react-portfolio/static/css/main.466ab466.css.map",
-    "main.c64795a2.js.map": "/react-portfolio/static/js/main.c64795a2.js.map"
+    "main.593199d6.js.map": "/react-portfolio/static/js/main.593199d6.js.map"
   },
   "entrypoints": [
     "static/css/main.466ab466.css",
-    "static/js/main.c64795a2.js"
+    "static/js/main.593199d6.js"
   ]
 }
