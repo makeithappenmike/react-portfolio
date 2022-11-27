@@ -10,6 +10,8 @@ import Form from "../components/Form/index";
 import Hero from './sections/Hero';
 import Navigation from './Navigation';
 import { ParallaxProvider, Parallax, useParallax } from 'react-scroll-parallax';
+import Favicon from 'react-favicon';
+import fav from '../assets/favicon.ico';
 
 export default function PortfolioContainer() {
 
@@ -22,6 +24,7 @@ export default function PortfolioContainer() {
 
     return <ParallaxProvider>
       <section className='page'>
+      <Favicon url={fav} />
       <section id='hero' style={styles.hero}>
         <Hero />
       </section>
