@@ -1,4 +1,4 @@
-import React, { isValidElement, useState } from 'react';
+import React, { isValidElement, useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -6,7 +6,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 
 function FormExample() {
-  const buttonClass = 'btn btn-light';
+const buttonClass = 'btn btn-light';
 
     const styles = {
         field: {
@@ -16,13 +16,17 @@ function FormExample() {
 
   const [validated, setValidated] = useState(false);
 
+  const emailField = document.querySelector('#emailField');
+
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
+    if (form.checkValidity() === false && emailField) {
       event.preventDefault();
       event.stopPropagation();
       alert('Uh oh! Looks like there are errors you need to fix.');
     } else {
+        form.reset();
+        setValidated(true);
         alert('Thanks for submitting!');
     }
 
@@ -30,6 +34,16 @@ function FormExample() {
   };
 
   const handleEmailBlur = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
+  const handleMessageBlur = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -42,6 +56,8 @@ function FormExample() {
   };
 
   return (
+      <>
+      <h2>Contact</h2>
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Row className="mb-3">
         <Form.Group as={Col} md="4" controlId="validationCustom01">
@@ -64,8 +80,9 @@ function FormExample() {
           {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label id='emailField'>Email Address</Form.Label>
         <Form.Control
+        required
         hasValidation
         type="email"
         placeholder="name@example.com"
@@ -76,12 +93,22 @@ function FormExample() {
             </Form.Control.Feedback>
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Example textarea</Form.Label>
-        <Form.Control as="textarea" rows={3} />
+        <Form.Label>Message</Form.Label>
+        <Form.Control
+        required
+        hasValidation
+        as="textarea"
+        placeholder='Message'
+        onBlur={handleMessageBlur}
+        rows={3} />
+        <Form.Control.Feedback type="invalid">
+              Please include a message.
+            </Form.Control.Feedback>
       </Form.Group>
       <Button type="submit" className={buttonClass}>Submit form</Button>
       </Row>
     </Form>
+    </>
   );
 }
 
