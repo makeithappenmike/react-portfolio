@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import Button from 'react-bootstrap/Button';
 import './style.css'; 
 import TopButton from '../TopButton';
 
@@ -16,7 +15,7 @@ const styles = {
   }
 }
 
-const buttonClass = '{btn btn-light}';
+const buttonClass = 'btn btn-light';
 
 function Form() {
   // Here we set two state variables for firstName and lastName using `useState`
