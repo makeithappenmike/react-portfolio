@@ -1,5 +1,5 @@
 import github_white from '../assets/github_white.png';
-    import linkedin_white from '../assets/linkedin_white.png';
+import linkedin_white from '../assets/linkedin_white.png';
     // import { ParallaxBanner } from 'react-scroll-parallax';
     
     const styles = {
