@@ -41,6 +41,19 @@ const handleScroll = () => {
       // }
     });
   };
+const myRef = useRef();
+const [currentSection, setCurrentSection] = useState();
+console.log('currentSection', currentSection);
+// Attach the scroll listener to the div
+useEffect(() => {
+  // const div = ref.current
+ console.log('myRef:', myRef.current);
+ const observer = new IntersectionObserver((entries) => {
+   const entry = entries[0];
+   setCurrentSection(entry.isIntersecting);
+ });
+ observer.observe(myRef.current);
+}, [])
 
 // Attach the scroll listener to the div
 useEffect(() => {
@@ -70,23 +83,28 @@ useEffect(() => {
         <Hero />
       </section>
       <section className='sections'>
-        <section id='about' style={styles.about} onClick={handleClick} onScroll={handleScroll}>
+        <section ref={myRef} id='about' style={styles.about} onClick={handleClick} onScroll={handleScroll}>
         <Parallax>
+          <p>{ currentSection ? document.querySelector('#about').style.borderLeft = '5px solid white' : '' }
+          { !currentSection ? document.querySelector('#about').style.borderLeft = '0px solid white' : '' }</p>
           <About />
           </Parallax>
         </section>
-        <section id='portfolio' style={styles.portfolio} onClick={handleClick} onScroll={handleScroll}>
+        <section ref={myRef} id='portfolio' style={styles.portfolio} onClick={handleClick} onScroll={handleScroll}>
         <Parallax>
+        <p>{ currentSection ? 'Yes' : 'No' }</p>
           <Portfolio />
           </Parallax>
         </section>
-        <section id='resume' style={styles.resume} onClick={handleClick} onScroll={handleScroll}>
+        <section ref={myRef} id='resume' style={styles.resume} onClick={handleClick} onScroll={handleScroll}>
         <Parallax>
+        <p>{ currentSection ? 'Yes' : 'No' }</p>
           <Resume />
           </Parallax>
         </section>
-        <section id='contact' style={styles.contact} onClick={handleClick} onScroll={handleScroll}>
+        <section ref={myRef} id='contact' style={styles.contact} onClick={handleClick} onScroll={handleScroll}>
         <Parallax>
+        <p>{ currentSection ? 'Yes' : 'No' }</p>
           <Form />
           </Parallax>
         </section>
@@ -144,14 +162,14 @@ useEffect(() => {
       color: 'white',
       textAlign: 'center'
     },
-    active: {
-      borderLeft: '10px solid #ffba08',
-      // borderRadius: '5px',
-      backgroundColor: isActive ? 'red' : 'blue',
-      marginBottom: '50px',
-      padding: '10px',
-      color: 'white'
-    },
+    // active: {
+    //   borderLeft: '10px solid #ffba08',
+    //   // borderRadius: '5px',
+    //   backgroundColor: isActive ? 'red' : 'blue',
+    //   marginBottom: '50px',
+    //   padding: '10px',
+    //   color: 'white'
+    // },
   };
 
   // const handleSectionChange = (sectionClicked) => setCurrentSection(sectionClicked);
