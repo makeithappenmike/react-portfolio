@@ -92,7 +92,7 @@ function Form() {
           type="text"
           placeholder="Message" id='messageInput'
         />
-        <button class={buttonClass} type="button" onClick={handleFormSubmit}>
+        <button className={buttonClass} type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>

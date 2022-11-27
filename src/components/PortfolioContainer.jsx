@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useInView, InView } from 'react-intersection-observer';
 import Header from './Header';
 import About from './sections/About';
 import Portfolio from './sections/Portfolio';
@@ -24,91 +25,91 @@ export default function PortfolioContainer() {
   // };
 
 // The scroll listener
-const handleScroll = () => {
-  const sectionHeight = document.querySelector('#about').offsetHeight;
-    window.addEventListener("scroll", () => {
-      // console.log('Scroll Y:', window.scrollY);
-      // console.log('Section Height:', sectionHeight);
-      // if (window.scrollY < sectionHeight / 2 && window.scrollY > sectionHeight * 1.5) {
-      //   document.querySelector('#about').style.backgroundColor = 'pink';
-      // } else if (window.scrollY > sectionHeight * 1.5 && window.scrollY < sectionHeight * 2.5) {
-      //   document.querySelector('#portfolio').style.backgroundColor = 'pink';
-      //   document.querySelector('#about').style.backgroundColor = 'black';
-      //   document.querySelector('#about').style.backgroundColor = '';
-      // } else if (window.scrollY > 450 && window.scrollY < 550) {
-      //   document.querySelector('#resume').style.backgroundColor = 'red';
-      //   document.querySelector('#portfolio').style.backgroundColor = '';
-      // }
-    });
-  };
-const myRef = useRef();
-const [currentSection, setCurrentSection] = useState();
-console.log('currentSection', currentSection);
-// Attach the scroll listener to the div
-useEffect(() => {
-  // const div = ref.current
- console.log('myRef:', myRef.current);
- const observer = new IntersectionObserver((entries) => {
-   const entry = entries[0];
-   setCurrentSection(entry.isIntersecting);
- });
- observer.observe(myRef.current);
-}, [])
+// const handleScroll = () => {
+//   const sectionHeight = document.querySelector('#about').offsetHeight;
+//     window.addEventListener("scroll", () => {
+//       // console.log('Scroll Y:', window.scrollY);
+//       // console.log('Section Height:', sectionHeight);
+//       // if (window.scrollY < sectionHeight / 2 && window.scrollY > sectionHeight * 1.5) {
+//       //   document.querySelector('#about').style.backgroundColor = 'pink';
+//       // } else if (window.scrollY > sectionHeight * 1.5 && window.scrollY < sectionHeight * 2.5) {
+//       //   document.querySelector('#portfolio').style.backgroundColor = 'pink';
+//       //   document.querySelector('#about').style.backgroundColor = 'black';
+//       //   document.querySelector('#about').style.backgroundColor = '';
+//       // } else if (window.scrollY > 450 && window.scrollY < 550) {
+//       //   document.querySelector('#resume').style.backgroundColor = 'red';
+//       //   document.querySelector('#portfolio').style.backgroundColor = '';
+//       // }
+//     });
+//   };
+  const { ref: aboutRef, inView: aboutCurrent } = useInView();
+  const { ref: portfolioRef, inView: portfolioCurrent } = useInView();
+  const { ref: resumeRef, inView: resumeCurrent } = useInView();
+  const { ref: contactRef, inView: contactCurrent } = useInView();
+  // const myRef = useRef();
+// const [currentSection, setCurrentSection] = useState();
+// console.log('currentSection', currentSection);
+// // Attach the scroll listener to the div
+// useEffect(() => {
+//   // const div = ref.current
+//  console.log('myRef:', myRef.current);
+//  const observer = new IntersectionObserver((entries) => {
+//    const entry = entries[0];
+//    setCurrentSection(entry.isIntersecting);
+//  });
+//  observer.observe(myRef.current);
+// }, [])
 
 // Attach the scroll listener to the div
-useEffect(() => {
-  // const div = ref.current
-  window.addEventListener("scroll", handleScroll)
-}, [handleScroll])
+// useEffect(() => {
+//   aboutCurrent ? console.log('inView', aboutRef.current) : '';
+// }, [])
 
-  const [isActive, setIsActive] = useState(false);
+  // const [isActive, setIsActive] = useState(false);
   // const { ref } = useParallax({ speed: 10, onEnter: (element) => console.log('Enter', element.el), onExit: (element) => console.log('Exit', element.el),  });
 
   const renderSection = () => {
 
-    const handleClick = event => {
-      window.addEventListener('click', console.log('Clicking'));
-      console.log('Target: ', event.currentTarget.id);
-      // setIsActive(() => {
-      //   console.log('Hello');
-      //   console.log(document.querySelector('#' + event.currentTarget.id));
-      //   document.querySelector('#' + event.currentTarget.id).style.backgroundColor = 'green';
-      // });
-      // event.currentTarget.id.style={styles.active};
-    };
+    // const handleClick = event => {
+    //   window.addEventListener('click', console.log('Clicking'));
+    //   console.log('Target: ', event.currentTarget.id);
+    //   // setIsActive(() => {
+    //   //   console.log('Hello');
+    //   //   console.log(document.querySelector('#' + event.currentTarget.id));
+    //   //   document.querySelector('#' + event.currentTarget.id).style.backgroundColor = 'green';
+    //   // });
+    //   // event.currentTarget.id.style={styles.active};
+    // };
 
     return <ParallaxProvider>
       <section className='page'>
-      <section id='hero' style={styles.hero}  onClick={handleClick} onScroll={handleScroll}>
+      <section id='hero' style={styles.hero}>
         <Hero />
       </section>
       <section className='sections'>
-        <section ref={myRef} id='about' style={styles.about} onClick={handleClick} onScroll={handleScroll}>
+        <section ref={aboutRef} id='about' style={styles.about}>
         <Parallax>
-          <p>{ currentSection ? document.querySelector('#about').style.borderLeft = '5px solid white' : '' }
-          { !currentSection ? document.querySelector('#about').style.borderLeft = '0px solid white' : '' }</p>
+        <InView onChange={(inView, entry) => console.log('Inview:', inView)}>
           <About />
+          </InView>
           </Parallax>
         </section>
-        <section ref={myRef} id='portfolio' style={styles.portfolio} onClick={handleClick} onScroll={handleScroll}>
+        <section ref={portfolioRef} id='portfolio' style={styles.portfolio}>
         <Parallax>
-        <p>{ currentSection ? 'Yes' : 'No' }</p>
           <Portfolio />
           </Parallax>
         </section>
-        <section ref={myRef} id='resume' style={styles.resume} onClick={handleClick} onScroll={handleScroll}>
+        <section ref={resumeRef} id='resume' style={styles.resume}>
         <Parallax>
-        <p>{ currentSection ? 'Yes' : 'No' }</p>
           <Resume />
           </Parallax>
         </section>
-        <section ref={myRef} id='contact' style={styles.contact} onClick={handleClick} onScroll={handleScroll}>
+        <section ref={contactRef} id='contact' style={styles.contact}>
         <Parallax>
-        <p>{ currentSection ? 'Yes' : 'No' }</p>
           <Form />
           </Parallax>
         </section>
-        <section id='footer' style={styles.footer} onClick={handleClick} onScroll={handleScroll}>
+        <section id='footer' style={styles.footer}>
           <Footer />
         </section>
       </section>
@@ -162,14 +163,14 @@ useEffect(() => {
       color: 'white',
       textAlign: 'center'
     },
-    // active: {
-    //   borderLeft: '10px solid #ffba08',
-    //   // borderRadius: '5px',
-    //   backgroundColor: isActive ? 'red' : 'blue',
-    //   marginBottom: '50px',
-    //   padding: '10px',
-    //   color: 'white'
-    // },
+    active: {
+      borderLeft: '10px solid #ffba08',
+      // borderRadius: '5px',
+      // backgroundColor: isActive ? 'red' : 'blue',
+      marginBottom: '50px',
+      padding: '10px',
+      color: 'white'
+    },
   };
 
   // const handleSectionChange = (sectionClicked) => setCurrentSection(sectionClicked);

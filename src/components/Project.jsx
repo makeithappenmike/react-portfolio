@@ -46,8 +46,8 @@ function BasicExample() {
           <Card.Text>
             This was a group project where we had a little fun mixing the Marvel Universe with a bit of fan fiction! TL;DR, we wanted to help answer the question "What would Thor go out and do if he was bored?"
           </Card.Text>
-          <a style={styles.button} class={buttonClass} target='blank' href="https://makeithappenmike.github.io/have-a-marvelous-time/" role="button">Visit the App</a>
-          <a style={styles.button} class={buttonClass} target='blank' href="https://github.com/makeithappenmike/have-a-marvelous-time" role="button">Visit the Repository</a>
+          <a style={styles.button} className={buttonClass} target='blank' href="https://makeithappenmike.github.io/have-a-marvelous-time/" role="button">Visit the App</a>
+          <a style={styles.button} className={buttonClass} target='blank' href="https://github.com/makeithappenmike/have-a-marvelous-time" role="button">Visit the Repository</a>
         </Card.Body>
       </Card>
 
@@ -59,8 +59,8 @@ function BasicExample() {
           <Card.Text>
             Another group effort that was one of my favorite Bootcamp projects to work on. NOVELty let's someone catalogue, share, and borrow books with their friends.
           </Card.Text>
-          <a style={styles.button} class={buttonClass} target='blank' href="https://novelty-book-swap.herokuapp.com/" role="button">Visit the App</a>
-          <a style={styles.button} class={buttonClass} target='blank' href="https://github.com/VaishaliQA/Novelty_Project" role="button">Visit the Repository</a>
+          <a style={styles.button} className={buttonClass} target='blank' href="https://novelty-book-swap.herokuapp.com/" role="button">Visit the App</a>
+          <a style={styles.button} className={buttonClass} target='blank' href="https://github.com/VaishaliQA/Novelty_Project" role="button">Visit the Repository</a>
         </Card.Body>
       </Card>
 
@@ -72,8 +72,8 @@ function BasicExample() {
       <Card.Text>
         Need a new password? Enter: this app! Its quick and easy and uses a handful of window prompts to generate a unique string (don't forget to write it down!).
       </Card.Text>
-          <a style={styles.button} class={buttonClass} target='blank' href="https://makeithappenmike.github.io/have-a-marvelous-time/" role="button">Visit the App</a>
-          <a style={styles.button} class={buttonClass} target='blank' href="https://github.com/VaishaliQA/Novelty_Project" role="button">Visit the Repository</a>
+          <a style={styles.button} className={buttonClass} target='blank' href="https://makeithappenmike.github.io/have-a-marvelous-time/" role="button">Visit the App</a>
+          <a style={styles.button} className={buttonClass} target='blank' href="https://github.com/VaishaliQA/Novelty_Project" role="button">Visit the Repository</a>
     </Card.Body>
   </Card>
 
@@ -85,8 +85,8 @@ function BasicExample() {
       <Card.Text>
         Your very own private Scheduling app with updating color codes based on the current time in reference to what you've scheduled.
       </Card.Text>
-      <a style={styles.button} class={buttonClass} target='blank' href="https://makeithappenmike.github.io/scheduling-app/" role="button">Visit the App</a>
-      <a style={styles.button} class={buttonClass} target='blank' href="https://github.com/makeithappenmike/scheduling-app" role="button">Visit the Repository</a>
+      <a style={styles.button} className={buttonClass} target='blank' href="https://makeithappenmike.github.io/scheduling-app/" role="button">Visit the App</a>
+      <a style={styles.button} className={buttonClass} target='blank' href="https://github.com/makeithappenmike/scheduling-app" role="button">Visit the Repository</a>
     </Card.Body>
   </Card>
 
@@ -98,8 +98,8 @@ function BasicExample() {
       <Card.Text>
         This is no ordinary Text Editor! It can be used on or offline and downloaded to your device to run as a Progressive Web Application.
       </Card.Text>
-      <a style={styles.button} class={buttonClass} target='blank' href="https://tranquil-tundra-85451.herokuapp.com/" role="button">Visit the App</a>
-      <a style={styles.button} class={buttonClass} target='blank' href="https://github.com/makeithappenmike/pwa-text-editor" role="button">Visit the Repository</a>
+      <a style={styles.button} className={buttonClass} target='blank' href="https://tranquil-tundra-85451.herokuapp.com/" role="button">Visit the App</a>
+      <a style={styles.button} className={buttonClass} target='blank' href="https://github.com/makeithappenmike/pwa-text-editor" role="button">Visit the Repository</a>
     </Card.Body>
   </Card>
 
@@ -111,8 +111,8 @@ function BasicExample() {
       <Card.Text>
         Ever wondered if you'll need an umbrella later? If so, I've got you covered here. Check the current and future forecast for any location.
       </Card.Text>
-      <a style={styles.button} class={buttonClass} target='blank' href="https://makeithappenmike.github.io/check-your-weather-app/" role="button">Visit the App</a>
-      <a style={styles.button} class={buttonClass} target='blank' href="https://github.com/makeithappenmike/check-your-weather-app" role="button">Visit the Repository</a>
+      <a style={styles.button} className={buttonClass} target='blank' href="https://makeithappenmike.github.io/check-your-weather-app/" role="button">Visit the App</a>
+      <a style={styles.button} className={buttonClass} target='blank' href="https://github.com/makeithappenmike/check-your-weather-app" role="button">Visit the Repository</a>
     </Card.Body>
   </Card>
   </Row>

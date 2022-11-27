@@ -24,7 +24,7 @@ function Resume(props) {
   return (
     <section id='resume' className='pageSection resume'>
     <h2>Resume</h2>
-    <p><button class={buttonClass} onClick={downloadResume} >Download</button>
+    <p><button className={buttonClass} onClick={downloadResume} >Download</button>
     <p />
     <h4>Proficiencies</h4>
     <p>Frontend:<br />HTML, CSS, Javascript, JQuery, Responsive & Semantic Design, React, Bootstrap</p>
