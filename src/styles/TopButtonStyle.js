@@ -11,7 +11,6 @@ export const Content = styled.div`
 `;
   
 export const Button = styled.div`
-   position: fixed; 
    width: 100%;
    left: 50%;
    bottom: 40px;
@@ -19,5 +18,8 @@ export const Button = styled.div`
    font-size: 3rem;
    z-index: 1;
    cursor: pointer;
-   color: green;
+   color: #343a40;
+   &:hover {
+      color: #495057;
+    }
 `

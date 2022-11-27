@@ -1,6 +1,7 @@
 import React from 'react';
 import resume from '../../assets/resume.pdf';
 import 'bootstrap/dist/css/bootstrap.css';
+import TopButton from '../TopButton';
 
 const downloadResume = () => {
   // using Java Script method to get PDF file
@@ -29,6 +30,7 @@ function Resume(props) {
     <p>Frontend:<br />HTML, CSS, Javascript, JQuery, Responsive & Semantic Design, React, Bootstrap</p>
     <p>Backend:<br />APIs (REST & GraphQL), Node, Express, MySQL, MongoDB/Mongoose, MERN, Kubernetes, Jenkins</p>
 </p>
+    <TopButton />
     </section>
   )
 }

@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import {FaArrowCircleUp} from 'react-icons/fa';
+import { FaArrowCircleUp } from 'react-icons/fa';
 import { Button } from '../styles/TopButtonStyle';
+
+// Thanks to https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/ for this!
   
 const ScrollButton = () =>{
   

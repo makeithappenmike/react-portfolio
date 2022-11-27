@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Button from 'react-bootstrap/Button';
 import './style.css'; 
+import TopButton from '../TopButton';
 
 const styles = {
   form: {
@@ -96,6 +97,8 @@ function Form() {
           Submit
         </button>
       </form>
+      <TopButton />
+      <p></p>
     </div>
   );
 }

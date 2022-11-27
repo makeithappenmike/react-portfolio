@@ -9,6 +9,7 @@ import password_generator from '../assets/password_generator.png';
 import scheduling_app from '../assets/scheduling_app.png';
 import pwa_text_editor from '../assets/pwa_text_editor.png';
 import weather_app from '../assets/weather_app.png';
+import TopButton from '../components/TopButton';
 
 const styles = {
   projects: {
@@ -115,7 +116,7 @@ function BasicExample() {
     </Card.Body>
   </Card>
   </Row>
-
+  <TopButton />
   </section>
 </>
   );
