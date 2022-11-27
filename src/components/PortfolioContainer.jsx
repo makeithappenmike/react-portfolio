@@ -5,7 +5,7 @@ import About from './sections/About';
 import Portfolio from './sections/Portfolio';
 import Resume from './sections/Resume';
 import Footer from '../components/Footer';
-// import Contact from './sections/Contact';
+import Contact from './sections/Contact';
 import Form from "../components/Form/index";
 import Hero from './sections/Hero';
 import Navigation from './Navigation';
@@ -106,7 +106,7 @@ export default function PortfolioContainer() {
         </section>
         <section ref={contactRef} id='contact' style={styles.contact}>
         <Parallax>
-          <Form />
+          <Contact />
           </Parallax>
         </section>
         <section id='footer' style={styles.footer}>

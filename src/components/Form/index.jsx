@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './style.css'; 
 import TopButton from '../TopButton';
+import ReactForm from 'react-bootstrap/Form';
 
 const styles = {
   form: {
@@ -17,6 +18,8 @@ const styles = {
 
 const buttonClass = 'btn btn-light';
 
+const alertMessage = 'Uh oh! First name, Last Name, Email Address and a Message are all required when using the Contact form.'
+
 function Form() {
   // Here we set two state variables for firstName and lastName using `useState`
   const [firstName, setFirstName] = useState('');
@@ -27,6 +30,7 @@ function Form() {
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
     const { name, value } = e.target;
+    console.log(e.target.name);
 
     // Ternary statement that will call either setFirstName or setLastName based on what field the user is typing in
     return name === 'firstName' ? setFirstName(value) : setLastName(value);
@@ -53,12 +57,29 @@ function Form() {
     e.preventDefault();
 
     // Alert the user their first and last name, clear the inputs
+    if (firstName && lastName && email && message) {
     alert(`Thanks for the message, ${firstName}!`);
     setFirstName('');
     setLastName('');
     setEmail('');
     setMessage('');
+  } else {
+    alert(alertMessage);
+  }
   };
+
+  // const handleEmailBlur = (e) => {
+  //   // Preventing the default behavior of the form submit (which is to refresh the page)
+  //   e.preventDefault();
+  //   email.match() : '';
+
+  //   // Alert the user their first and last name, clear the inputs
+  //   // alert(`Thanks for the message, ${firstName}!`);
+  //   // setFirstName('');
+  //   // setLastName('');
+  //   // setEmail('');
+  //   // setMessage('');
+  // };
 
   return (
     <div>
@@ -85,6 +106,8 @@ function Form() {
           type="text"
           placeholder="Email Address"
         />
+        <ReactForm.Control.Feedback type="invalid">Please provide a valid gmail.</ReactForm.Control.Feedback>
+          <ReactForm.Control.Feedback type="valid">Looks good!</ReactForm.Control.Feedback>
         <input
           value={message}
           name="message"
