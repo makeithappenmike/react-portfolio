@@ -10,7 +10,7 @@ import scheduling_app from '../assets/scheduling_app.png';
 import pwa_text_editor from '../assets/pwa_text_editor.png';
 import weather_app from '../assets/weather_app.png';
 import TopButton from './TopButton';
-import styled from "@emotion/styled/macro";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 
 const styles = {
   projects: {
@@ -33,11 +33,6 @@ const styles = {
 
 const buttonClass = 'btn btn-light';
 
-const Hover = styled.div({
-  opacity: 0,
-  transition: "opacity 350ms ease",
-});
-
 function BasicExample() {
   return (
     <>
@@ -45,8 +40,7 @@ function BasicExample() {
       <h2>Portfolio</h2>
       {/* Project One */}
       <Row style={styles.projects} xs={1} md={2} className="g-4 justify-content-center">
-      <Hover>
-      <Card style={styles.project} className="project btn">
+      <Card style={styles.project} className="project">
         <Card.Img variant="top" src={have_a_marvelous_time} style={styles.image} />
         <Card.Body bg='secondary'>
           <Card.Title bg='primary' as='h4'>Have a Marvelous Time</Card.Title>
@@ -57,7 +51,6 @@ function BasicExample() {
           <a style={styles.button} className={buttonClass} target='blank' href="https://github.com/makeithappenmike/have-a-marvelous-time" role="button">Visit the Repository</a>
         </Card.Body>
       </Card>
-      </Hover>
 
       {/* Project Two */}
       <Card style={styles.project} className="project">
