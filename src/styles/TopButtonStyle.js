@@ -15,11 +15,12 @@ export const Button = styled.div`
    left: 50%;
    bottom: 40px;
    height: 20px;
-   font-size: 3rem;
+   font-size: 2rem;
    z-index: 1;
    cursor: pointer;
    color: #343a40;
    &:hover {
       color: #495057;
+      cursor: pointer;
     }
 `
