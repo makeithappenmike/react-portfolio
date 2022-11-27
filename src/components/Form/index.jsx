@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import Button from 'react-bootstrap/Button';
 import './style.css'; 
 
 const styles = {
@@ -12,6 +14,8 @@ const styles = {
     width: '100%',
   }
 }
+
+const buttonClass = '{btn btn-light}';
 
 function Form() {
   // Here we set two state variables for firstName and lastName using `useState`
@@ -88,7 +92,7 @@ function Form() {
           type="text"
           placeholder="Message" id='messageInput'
         />
-        <button type="button" onClick={handleFormSubmit}>
+        <button class={buttonClass} type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>

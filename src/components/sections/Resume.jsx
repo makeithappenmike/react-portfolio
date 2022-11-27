@@ -1,5 +1,6 @@
 import React from 'react';
-import resume from '../../assets/resume.pdf'
+import resume from '../../assets/resume.pdf';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const downloadResume = () => {
   // using Java Script method to get PDF file
@@ -16,15 +17,17 @@ const downloadResume = () => {
   })
 }
 
+const buttonClass = 'btn btn-light';
+
 function Resume(props) {
   return (
     <section id='resume' className='pageSection resume'>
     <h2>Resume</h2>
-    <p><button onClick={downloadResume} >Download</button>
+    <p><button class={buttonClass} onClick={downloadResume} >Download</button>
     <p />
-    <h2>Proficiencies</h2>
+    <h4>Proficiencies</h4>
     <p>Frontend:<br />HTML, CSS, Javascript, JQuery, Responsive & Semantic Design, React, Bootstrap</p>
-    <p>Backend:<br />APIs (REST & GraphQL), Node, Express, MySQL, MongoDB/Mongoose, MERN</p>
+    <p>Backend:<br />APIs (REST & GraphQL), Node, Express, MySQL, MongoDB/Mongoose, MERN, Kubernetes, Jenkins</p>
 </p>
     </section>
   )

@@ -4,7 +4,7 @@ import About from './sections/About';
 import Portfolio from './sections/Portfolio';
 import Resume from './sections/Resume';
 import Footer from '../components/Footer';
-import Contact from './sections/Contact';
+// import Contact from './sections/Contact';
 import Form from "../components/Form/index";
 import Hero from './sections/Hero';
 import Navigation from './Navigation';
@@ -115,7 +115,7 @@ useEffect(() => {
       color: 'white',
     },
     portfolio: {
-      padding: '10px',
+      padding: '50px',
       paddingTop: '50px',
       // minHeight: '100vh',
       // borderLeft: '15px solid #dc2f02',

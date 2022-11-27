@@ -11,6 +11,9 @@ import pwa_text_editor from '../assets/pwa_text_editor.png';
 import weather_app from '../assets/weather_app.png';
 
 const styles = {
+  projects: {
+    margin: '25px',
+  },
   project: {
     width: '18rem',
     margin: '10px',
@@ -26,15 +29,15 @@ const styles = {
   }
 };
 
-const buttonClass = 'btn btn-dark';
+const buttonClass = 'btn btn-light';
 
 function BasicExample() {
   return (
     <>
       <section className='portfolio' id='portfolio'>
-
+      <h2>Portfolio</h2>
       {/* Project One */}
-      <Row xs={1} md={2} className="g-4 justify-content-center">
+      <Row style={styles.projects} xs={1} md={2} className="g-4 justify-content-center">
       <Card style={styles.project} className="project">
         <Card.Img variant="top" src={have_a_marvelous_time} style={styles.image} />
         <Card.Body bg='secondary'>

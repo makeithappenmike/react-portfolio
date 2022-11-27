@@ -1,5 +1,5 @@
 import React from 'react';
-import hero_bg from '../../assets/hero_bg.jpg';
+import hero_bg from '../../assets/hero_bg.png';
 import github_white from '../../assets/github_white.png';
 import linkedin_white from '../../assets/linkedin_white.png';
 // import { ParallaxBanner } from 'react-scroll-parallax';
