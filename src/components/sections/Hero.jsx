@@ -24,10 +24,12 @@ const styles = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     color: 'white',
+    textShadow: '2px 2px 2px black',
   },
   socials: {
     maxWidth: '40px',
     padding: '10px',
+    filter: 'drop-shadow(1px 1px 1px black)',
   }
 }
 
