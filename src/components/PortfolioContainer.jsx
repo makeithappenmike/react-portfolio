@@ -29,7 +29,7 @@ export default function PortfolioContainer() {
       <section className='sections'>
         <section ref={aboutRef} id='about' style={styles.about}>
         <Parallax>
-        <InView onChange={(inView, entry) => console.log('Inview:', inView)}>
+        <InView>
           <About />
           </InView>
           </Parallax>

@@ -56,8 +56,6 @@ const handleMessageBlur = (event) => {
   if (form.checkValidity() === false) {
     event.preventDefault();
     event.stopPropagation();
-  } else {
-      console.log('Valid');
   }
 
   setValidated(true);
