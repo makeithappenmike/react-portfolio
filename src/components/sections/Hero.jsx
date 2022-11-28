@@ -6,7 +6,6 @@ import linkedin_white from '../../assets/linkedin_white.png';
 const styles = {
   hero: {
     minHeight: '100vh',
-    backgroundImage: 'url(../../assets/hero_bg.jpg)',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
