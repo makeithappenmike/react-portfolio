@@ -91,7 +91,7 @@ const handleMessageBlur = (event) => {
         <Form.Label id='emailField'>Email Address</Form.Label>
         <Form.Control
         required
-        hasValidation='true'
+        hasvalidation='true'
         type='email'
         placeholder='name@example.com'
         onBlur={handleEmailBlur}
@@ -104,7 +104,7 @@ const handleMessageBlur = (event) => {
         <Form.Label>Message</Form.Label>
         <Form.Control
         required
-        hasValidation='true'
+        hasvalidation='true'
         as='textarea'
         placeholder='Message'
         onBlur={handleMessageBlur}
