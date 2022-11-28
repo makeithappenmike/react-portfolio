@@ -2,7 +2,6 @@ import React from 'react';
 import hero_bg from '../../assets/hero_bg.png';
 import github_white from '../../assets/github_white.png';
 import linkedin_white from '../../assets/linkedin_white.png';
-// import { ParallaxBanner } from 'react-scroll-parallax';
 
 const styles = {
   hero: {
@@ -43,11 +42,8 @@ function Hero() {
 ' target='blank'><img style={styles.socials} src={linkedin_white} /></a></span>
     </div>
     <img className='hero_image' src={hero_bg} style={styles.hero_img} />
-    {/* <ParallaxBanner
-      layers={[{ image: hero_bg, speed: -15 }]}
-      className="aspect-[2/1]" style={styles.hero_img}
-    /> */}
     </section>
   )
 }
+
 export default Hero

@@ -1,9 +1,9 @@
 import React from 'react';
-import Project from '../Projects';
+import Projects from '../Projects';
 
 function Portfolio(props) {
   return (
-    <Project />
+    <Projects />
   )
 }
 

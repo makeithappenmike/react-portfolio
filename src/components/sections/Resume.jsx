@@ -6,6 +6,7 @@ import TopButton from '../TopButton';
 const downloadResume = () => {
   // using Java Script method to get PDF file
   fetch(resume).then(response => {
+      // Create a new blob (file-like object)
       response.blob().then(blob => {
           // Creating new object of PDF file
           const fileURL = window.URL.createObjectURL(blob);
