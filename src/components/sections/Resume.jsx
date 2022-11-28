@@ -21,18 +21,28 @@ const downloadResume = () => {
 
 const buttonClass = 'btn btn-light';
 
+const styles = {
+  download: {
+    marginBottom: '25px'
+  }
+}
+
 function Resume(props) {
   return (
+    <>
     <section id='resume' className='pageSection resume'>
     <h2>Resume</h2>
-    <p><button className={buttonClass} onClick={downloadResume} >Download</button>
-    <p />
-    <h4>Proficiencies</h4>
-    <p>Frontend:<br />HTML, CSS, Javascript, JQuery, Responsive & Semantic Design, React, Bootstrap</p>
-    <p>Backend:<br />APIs (REST & GraphQL), Node, Express, MySQL, MongoDB/Mongoose, MERN, Kubernetes, Jenkins</p>
-</p>
+    <section>
+    <button style={styles.download} className={buttonClass} onClick={downloadResume} >Download</button>
+    <br />
+    <section><h4>Proficiencies</h4></section>
+    <section>Frontend:<br />HTML, CSS, Javascript, JQuery, Responsive & Semantic Design, React, Bootstrap</section>
+    <br />
+    <section>Backend:<br />APIs (REST & GraphQL), Node, Express, MySQL, MongoDB/Mongoose, MERN, Kubernetes, Jenkins</section>
+    </section>
     <TopButton />
     </section>
+    </>
   )
 }
 
