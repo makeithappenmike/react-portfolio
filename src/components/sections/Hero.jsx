@@ -35,12 +35,12 @@ const styles = {
 function Hero() {
   return (
     <section className='pageSection hero' style={styles.hero}>
-    <div style={styles.hero_text}>
+    <section style={styles.hero_text}>
       <h1>Hi, I'm Michael.</h1>
       <p>A Software Engineer.</p>
       <span><a href='https://github.com/makeithappenmike' target='blank'><img style={styles.socials} src={github_white} /></a></span><span><a href='https://www.linkedin.com/in/makeithappenmike/
 ' target='blank'><img style={styles.socials} src={linkedin_white} /></a></span>
-    </div>
+    </section>
     <img className='hero_image' src={hero_bg} style={styles.hero_img} />
     </section>
   )

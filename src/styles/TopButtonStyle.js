@@ -5,12 +5,12 @@ export const Heading = styled.h1`
    color: green;
 `;
   
-export const Content = styled.div`
+export const Content = styled.section`
    overflowY: scroll;
    height: 2500px;
 `;
   
-export const Button = styled.div`
+export const Button = styled.section`
    width: 100%;
    left: 50%;
    bottom: 40px;
