@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-This is re-work of sorts of my initial portfolio, but in React! 
+This is a re-work of sorts of my initial portfolio, but in React! 
 
 The styling and interactivity is handled in large part by Bootstrap, with some customization on my end. I'm also utilizing a handful of packages such as ```react-scroll``` to help build some state into the app and handle navigating between the navbar and each section.
 
