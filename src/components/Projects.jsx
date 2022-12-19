@@ -11,6 +11,7 @@ import pwa_text_editor from '../assets/pwa_text_editor.png';
 import weather_app from '../assets/weather_app.png';
 import TopButton from './TopButton';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import WTFcode from '../assets/wtf-explanation.png';
 
 const styles = {
   projects: {
@@ -40,6 +41,18 @@ function BasicExample() {
       <h2>Portfolio</h2>
       {/* Project One */}
       <Row style={styles.projects} xs={1} md={2} className="g-4 justify-content-center">
+      <Card style={styles.project} className="project">
+        <Card.Img variant="top" src={WTFcode} style={styles.image} />
+        <Card.Body bg='secondary'>
+          <Card.Title bg='primary' as='h4'>WTFcode</Card.Title>
+          <Card.Text>
+            This group project highlights OpenAI and provides a new User interface to save searched code snippets.
+          </Card.Text>
+          <a style={styles.button} className={buttonClass} target='blank' href="https://www.wtf-code.com" role="button">Visit the App</a>
+          <a style={styles.button} className={buttonClass} target='blank' href="https://github.com/makeithappenmike/wtf-code" role="button">Visit the Repository</a>
+        </Card.Body>
+      </Card>
+
       <Card style={styles.project} className="project">
         <Card.Img variant="top" src={have_a_marvelous_time} style={styles.image} />
         <Card.Body bg='secondary'>
